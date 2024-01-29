@@ -1,4 +1,11 @@
-print("Ce programme vous permet d'eefectuer des conversions d'unités.")
+def EffectuerConversion(unit1, unit2, facteur):
+    valeurStr = input(f"Conversion {unit1} -> {unit2}. Entrez la valeur en {unit1}: ")
+    valeurFloat = float(valeurStr)
+    valeurConvertie = round(valeurFloat * facteur, 2)
+    print(f"Resultat de la conversion : {valeurFloat} {unit1} = {valeurConvertie} {unit2}")
+
+
+print("Ce programme vous permet d'effectuer des conversions d'unités.")
 print("Choisissez parmi celles-ci:")
 print("1 - Pouces vers cm")
 print("2 - cm vers pouces")
@@ -6,13 +13,8 @@ print("2 - cm vers pouces")
 choice = input("Votre choix (1 ou 2): ")
 
 if choice == "1":
-    valeurStr = input("Conversion Pouces -> cm. Entrez la valeur en pouces: ")
-    valeurFloat = float(valeurStr)
-    valeurConvertie = round(valeurFloat * 2.54, 2)
-    print(f"Resultat de la conversion : {valeurFloat} pouces = {valeurConvertie} cm")
+    EffectuerConversion("pouces", "cm", 2.54)
 
 if choice == "2":
-    valeurStr = input("Conversion Pouces -> cm. Entrez la valeur en pouces: ")
-    valeurFloat = float(valeurStr)
-    valeurConvertie = round(valeurFloat * 2.54, 2)
-    print(f"Resultat de la conversion : {valeurFloat} pouces = {valeurConvertie} cm")
+    EffectuerConversion("cm", "pouces", 0.393701)
+

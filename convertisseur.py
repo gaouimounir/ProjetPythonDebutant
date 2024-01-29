@@ -1,6 +1,13 @@
 def EffectuerConversion(unit1, unit2, facteur):
     valeurStr = input(f"Conversion {unit1} -> {unit2}. Entrez la valeur en {unit1}: ")
     valeurFloat = float(valeurStr)
+
+    try:
+        valeurFloat = float(valeurStr)
+    except ValueError:
+        print(f"Veuillez entrer une valeur numérique valide pour {unit1}!")
+        return EffectuerConversion(unit1, unit2, facteur)
+    
     valeurConvertie = round(valeurFloat * facteur, 2)
     print(f"Resultat de la conversion : {valeurFloat} {unit1} = {valeurConvertie} {unit2}")
 

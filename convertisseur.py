@@ -6,7 +6,13 @@ print("2 - cm vers pouces")
 choice = input("Votre choix (1 ou 2): ")
 
 if choice == "1":
-    valeurStrPouces = input("Conversion Pouces -> cm. Entrez la valeur en pouces: ")
-    valeurPouces = float(valeurStrPouces)
-    valeurCm = round(valeurPouces * 2.54, 2)
-    print(f"Resultat de la conversion : {valeurPouces} pouces = {valeurCm} cm")
+    valeurStr = input("Conversion Pouces -> cm. Entrez la valeur en pouces: ")
+    valeurFloat = float(valeurStr)
+    valeurConvertie = round(valeurFloat * 2.54, 2)
+    print(f"Resultat de la conversion : {valeurFloat} pouces = {valeurConvertie} cm")
+
+if choice == "2":
+    valeurStr = input("Conversion Pouces -> cm. Entrez la valeur en pouces: ")
+    valeurFloat = float(valeurStr)
+    valeurConvertie = round(valeurFloat * 2.54, 2)
+    print(f"Resultat de la conversion : {valeurFloat} pouces = {valeurConvertie} cm")

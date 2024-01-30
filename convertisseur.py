@@ -1,7 +1,5 @@
 def EffectuerConversion(unit1, unit2, facteur):
     valeurStr = input(f"Conversion {unit1} -> {unit2}. Entrez la valeur en {unit1}: ")
-    valeurFloat = float(valeurStr)
-
     try:
         valeurFloat = float(valeurStr)
     except ValueError:
@@ -11,17 +9,25 @@ def EffectuerConversion(unit1, unit2, facteur):
     valeurConvertie = round(valeurFloat * facteur, 2)
     print(f"Resultat de la conversion : {valeurFloat} {unit1} = {valeurConvertie} {unit2}")
 
+
+
+print("Ce programme vous permet d'effectuer des conversions d'unités.")
+
 while True:
-    print("Ce programme vous permet d'effectuer des conversions d'unités.")
-    print("Choisissez parmi celles-ci:")
+    
+    print("Choisissez parmi ces options:")
     print("1 - Pouces vers cm")
     print("2 - cm vers pouces")
+    print("0 - pour quitter")
 
-    choice = input("Votre choix (1 ou 2): ")
+    choice = input("Votre choix (0 , 1 ou 2): ")
 
-    if choice == "1" or choice == "2":
+    if choice == "0":
         break
-    print("Veuillez choisir entre 1 et 2")
+
+    if choice not in ["0", "1", "2"]:
+        print("Veuillez entrer une valeur valide (0 , 1 ou 2)!")
+        continue
 
     if choice == "1":
         EffectuerConversion("pouces", "cm", 2.54)
